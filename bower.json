@@ -1,0 +1,33 @@
+{
+  "name": "fenggp",
+  "version": "0.0.0",
+  "description": "A web application designed for members of Udacity's Front End Nano Degree students to share and comment on each others finished projects.",
+  "main": "/dist/index.html",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "gallery"
+  ],
+  "authors": [
+    "Udacity Front End Web Development Group Project members"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor_modules",
+    "test",
+    "tests",
+    "spec"
+  ],
+  "devDependencies": {
+    "knockoutjs": "~3.2.0",
+    "jquery": "jquery#<2.0 >1.9.1",
+    "requirejs": "~2.1.15",
+    "bootstrap-sass-official": "~3.3.1"
+  }
+}

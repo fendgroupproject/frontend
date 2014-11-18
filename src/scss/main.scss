@@ -1,0 +1,12 @@
+// Double slash comments like this are valid in sass and scss.
+// They will never be preserved when the scss is compiled.
+// traditional comments /* Comment */ can optionally be preserved
+// so keep that in mind when commenting
+
+// Import Bootstrap ( scss version used for compatibilty )
+
+@import 'src\vendor\bower_modules\bootstrap-sass-official\assets\stylesheets\_bootstrap.scss';
+
+
+/* START: Begin Project CSS - This comment style used for debugging purposes ( find where our styles start ) */
+//
