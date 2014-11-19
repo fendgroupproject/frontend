@@ -109,7 +109,7 @@ gulp.task('clean', ['clean-build']);
 
 // Build preview into the /build directory
 
-gulp.task('build', ['clean-build','moveVendorJs', 'build-css', 'build-projectjs']);
+gulp.task('build', ['moveVendorJs', 'build-css', 'build-projectjs']);
 
 // Watch the src files for changes and apply them immediately to the /build directory
 // also inform livereload of the change
