@@ -31,6 +31,9 @@ var paths = {
     'src/vendor/bower_modules/requirejs/require.js',
     'src/vendor/bower_modules/bootstrap-sass-official/assets/javascripts/bootstrap.js'
   ],
+  vendorFonts: [
+    'src/vendor/bower_modules/bootstrap-sass-official/assets/fonts/bootstrap/*.*'
+  ],
   
   // Our porjects scss file ( one for now )
   projectCss: 'src/scss/main.scss',
@@ -45,6 +48,14 @@ gulp.task('moveVendorJs', function(){
   return gulp.src(paths.vendorJs)
     .pipe(newer('build/js/vendor'))
     .pipe(gulp.dest('build/js/vendor'));
+});
+
+// Move our vendor fonts
+
+gulp.task('moveVendorJs', function(){
+  return gulp.src(paths.vendorFonts)
+    .pipe(newer('build/fonts/vendor'))
+    .pipe(gulp.dest('build/fonts/vendor'));
 });
 
 // Build our css
