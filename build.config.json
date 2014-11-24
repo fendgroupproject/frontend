@@ -21,7 +21,9 @@
       "src/vendor/bower_modules//knockoutjs/dist/knockout.js",
       "src/vendor/bower_modules//requirejs/require.js"
     ],
-    "bootstrap_js": "src/vendor/bower_modules/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js",
+    "bootstrap_js": [
+      "src/vendor/bower_modules/bootstrap-sass-official/assets/javascripts/bootstrap.js"
+    ],
     "bootstrap_js_target" : "/js/vendor/bootstrap/",
     "fonts_target": "/fonts/vendor/",
     "fonts": [
