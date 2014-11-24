@@ -1,12 +1,122 @@
-// Double slash comments like this are valid in sass and scss.
-// They will never be preserved when the scss is compiled.
-// traditional comments /* Comment */ can optionally be preserved
-// so keep that in mind when commenting
+// USER NOTE: 
+// This is an scss style comment. It will be automatically stripped on compilation, 
+// and can't be preserved. Standard  CSS style comments like /* comment */ can 
+// optionally be preserved, based on build settings.
 
-// Import Bootstrap ( scss version used for compatibilty )
+//-------------------------------------//
+// IMPORTED STYLESHEETS - DOCUMENTATION
+//-------------------------------------//
+//------------------------------------------------------------------------------------------//
+// Unlike regular css, in scss @import appends the imported document in-place.
+// thus, no additional http requests are generated.
+//
+// For that same reason, the order of imported stylesheets is important, please
+// Please ensure you understand how this works before you change the order of any @imports
+//------------------------------------------------------------------------------------------//
 
+
+// Import Bootstrap - copies bootstrap INTO this document when we compile.
+
+$icon-font-path: "../fonts/vendor/"; // This tells bootstrap where its icon fonts are
 @import 'src/vendor/bower_modules/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss';
 
 
-/* START: Begin Project CSS - This comment style used for debugging purposes ( find where our styles start ) */
+
+//-------------------------------------//
+// VARIABLES - DOCUMENTATION
+//-------------------------------------//
+//------------------------------------------------------------------------------------------//
+// Below we are defining a couple SCSS Variables. 
+// You can re-use them in the page like:
 //
+// body {
+//  color: $var-name;
+// }
+//
+// For more detailed documentation: 
+// http://sass-lang.com/guide#topic-2
+//------------------------------------------------------------------------------------------//
+
+
+$bg-depth-1:  #ddd; // now we can use $bg-depth-1, in place of #ddd. If we later change
+                    // the value of $bp-depth-1, say to #FF0000, it updates through the
+                    // entire stylesheet. Fast color schemes!!
+
+
+// Below we use a standard comment for START so that it is not automatically removed. 
+// That way we can quickly find where OUR styles start when we look at source. 
+// In the final version we will also strip the /* comment */ style comments, 
+// because users don't need them. 
+
+
+//-------------------------------------//
+/* 001 START: Begin Project CSS -------*/
+//-------------------------------------//
+
+//--------------------------------------------------//
+// Everything after this point can be in plain CSS
+//--------------------------------------------------//
+//------------------------------------------------------------------------------//
+// SCSS is a 'superset' of CSS. So plain CSS is 100% valid in SCSS files.
+// If I, or anyone else DOES use actual SCSS syntax, it will be commented
+// with reference links so that you understand EXACTLY what it does. 
+//------------------------------------------------------------------------------//
+
+
+//--------------------------//
+// Main UI Styles
+//--------------------------//
+
+body {
+  margin: 50px 0 0 0; 
+}
+
+.footer {
+  background: $bg-depth-1;
+}
+
+.footer > .container {
+  padding: 15px 15px;
+}
+
+//--------------------------//
+// Hero Unit / Jumbotron
+//--------------------------//
+
+.hero > .jumbotron {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
+//------------------------------------//
+// Gallery Component & Gallery Items
+//------------------------------------//
+
+// Galleries are almost always unordered lists
+// So we strip the default padding and list-style
+.gallery {
+  list-style-type: none;
+  padding: 0;
+}
+
+.featured-gallery {
+  background: $bg-depth-1;
+}
+.gallery-sort-menu {
+  border-bottom: 1px solid #ddd;
+}
+
+.gallery-item {
+  margin: 2em 0 0;
+}
+
+.project-item-info {
+  position: relative;
+}
+
+.project-item-info > footer { // Might be overqualified - could use a .class
+  position: absolute;         // rather than selecting footer here
+  right: 0;                   // but this should only select 1 or 2 extra footers
+  top: -2px;                  // so performance hit is not huge now. 
+}

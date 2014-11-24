@@ -6,13 +6,515 @@
         <title>fendgp</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/main.css?v0.0.0">
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <p data-bind="text: example"></p>
+        <header>
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+              <div class="container">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">
+                    Brand
+                  </a>
+                  <button class="navbar-toggle" data-toggle="collapse" data-target=".main-nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse main-nav-collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <!-- BEGIN Hero/Jumbotron  TODO(j.g.roeder): move to separate component  -->
+            <section class="hero">
+                <div class="jumbotron">
+                  <div class="container">
+                    <h1>Welcome Text</h1>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas senectus et netus et malesuada fames ac turpis egastas</p>
+                    <p><a href="" class="btn btn-primary btn-lg" role="button">Join Your Peers</a></p>
+                  </div>
+                </div>
+            </section>
+            <!-- END Hero/Jumbotron  -->
+        </header>
+        <main>
+            <!-- BEGIN Gallery Component (featured) TODO: Replace with template -->
+            <section class="project-gallery featured-gallery">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h1 class="h2">Weeks Top Projects</h1>
+                    </div>
+                  </div>
+                    <ul class="row gallery">
+                        <li class="col-xs-6 col-md-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- END Gallery Component(featured)-->
+            <!-- BEGIN Gallery Component(recent) TODO(j.g.roeder): Replace with template-->
+            <section class="project-gallery">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h1 class="h2">Most Recent Projects</h1>
+                    </div>
+                    <div class="col-xs-12">
+                      <ul class="nav nav-pills gallery-sort-menu">
+                        <li role="presentation" class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            All Categories <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="">Dunno</a></li>
+                            <li><a href="">Whatever</a></li>
+                            <li><a href="">Maybe Not</a></li>
+                          </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            All Projects <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="">FEND Project 1</a></li>
+                            <li><a href="">FEND Project 2</a></li>
+                            <li><a href="">FEND Project 3</a></li>
+                          </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            Newest <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">This Week</a></li>
+                            <li><a href="#">This Month</a></li>
+                            <li><a href="">All Time</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                    <ul class="row gallery">
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                        <li class="col-xs-6 col-md-4 col-lg-3 gallery-item">
+                            <article class="project-item">
+                              <figure>
+                                <img src="http://placehold.it/426x264" alt="" class="img-responsive">
+                              </figure>
+                              <div class="project-item-info">
+                                  <header>
+                                    <h1 class="h5">Image Title Long Format</h1>
+                                    <span>By: <a href="#">Some Name</a></span>
+                                  </header>
+                                  <footer>
+                                  <a href="" aria-label="comment">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                    24
+                                  </a>
+                                  <a href="" aria-label="like">
+                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                    13
+                                  </a>
+                                    <!-- <a href="#">Comments</a>
+                                    <a href="#">Likes</a> -->
+                                  </footer>
+                              </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- BEGIN Gallery Component(recent) TODO(j.g.roeder): Replace with template-->
+        </main>
+        <footer class="footer">
+          <div class="container">
+            <p>Footer - Colophon etc.</p>
+            <!-- TODO(j.g.roeder): The below example can safely be removed -->
+            <p data-bind="text: example"></p>
+          </div>
+        </footer>
+        
         <script src="js/vendor/require.js"></script>
         <script>
             require( [ "js/common" ], function (common) {
