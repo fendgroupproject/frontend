@@ -15,67 +15,86 @@ var gulp = require('gulp'),
   changed = require('gulp-changed'),
   connect = require('gulp-connect');
 
-// Define paths for different sets of files
-
-var paths = {
-  // Vendor provided css files
-  vendorCss: [
-    'src/vendor/bower_modules/bootstrap/dist/css/bootstrap.css',
-    'src/vendor/bower_modules/bootstrap/dist/css/bootstrap-theme.css'
-  ],
-  
-  // Vendor provided js files
-  vendorJs: [
-    'src/vendor/bower_modules/jquery/dist/jquery.js',
-    'src/vendor/bower_modules/knockoutjs/dist/knockout.js',
-    'src/vendor/bower_modules/requirejs/require.js',
-    'src/vendor/bower_modules/bootstrap-sass-official/assets/javascripts/bootstrap.js'
-  ],
-  
-  // Our porjects scss file ( one for now )
-  projectCss: 'src/scss/main.scss',
-  
-  // Our other project files ( front-end js and html )
-  projectFiles: ['src/js/**/*','src/index.html']
-}
-
-// Move our vendor files 
-
-gulp.task('moveVendorJs', function(){
-  return gulp.src(paths.vendorJs)
-    .pipe(newer('build/js/vendor'))
-    .pipe(gulp.dest('build/js/vendor'));
-});
-
-// Build our css
-
-gulp.task('build-css', function(){
-  return gulp.src(paths.projectCss)
-    .pipe(newer('build/css'))
-    .pipe(scss({ style: 'nested'}))
-    .pipe(autoprefixer( '> 1%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('build/css'))
-    .pipe(notify({ message: 'Styles built successfully'}));
-});
-
-
-// Move our project files
-
-gulp.task('build-projectjs', function(){
-  return gulp.src(paths.projectFiles, { base: 'src/js'})
-    .pipe(newer('build/js'))
-    .pipe(gulp.dest('build/js'));
-});
-
-
 //----------------------------------------------
-//  User Tasks ( Things you might actually run )
+//  Utilities
 //----------------------------------------------
 
 // Clean our build directory
 gulp.task('clean-build', function(cb){
   del('build/*', cb)
 });
+
+//----------------------------------------------
+//  Build Tasks
+//----------------------------------------------
+
+var config = require('./build.config.json'); // Load our build config ( paths )
+
+// Build Vendor Files & Directories
+
+gulp.task('toJsVendor', function(){
+  return gulp.src(config.vendor.js)
+    .pipe(newer(config.build_dir + config.vendor.js_target))
+    .pipe(gulp.dest(config.build_dir + config.vendor.js_target));
+});
+
+gulp.task('toJsVendorBootstrap', function(){
+  return gulp.src(config.vendor.bootstrap_js)
+    .pipe(newer(config.build_dir + config.vendor.bootstrap_js_target))
+    .pipe(gulp.dest(config.build_dir + config.vendor.bootstrap_js_target));
+});
+
+gulp.task('toVendorFonts', function(){
+  return gulp.src(config.vendor.fonts)
+    .pipe(newer(config.build_dir + config.vendor.fonts_target))
+    .pipe(gulp.dest(config.build_dir + config.vendor.fonts_target));
+});
+
+// Build Project Files & Directories
+
+gulp.task('build-css', function(){
+  return gulp.src(config.project.css)
+    .pipe(newer(config.build_dir + config.project.css_target))
+    .pipe(scss({ style: 'nested'}))
+    .pipe(autoprefixer( '> 1%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(gulp.dest(config.build_dir + config.project.css_target))
+    .pipe(notify({ message: 'Styles built successfully'}));
+});
+
+gulp.task('build-project-js', function(){
+  return gulp.src(config.project.js, { base: config.project.js_base })
+    .pipe(newer(config.build_dir))
+    .pipe(gulp.dest(config.build_dir + config.project.js_target ));
+});
+
+gulp.task('build-project-views', function(){
+  return gulp.src(config.project.views)
+    .pipe(newer(config.build_dir))
+    .pipe(gulp.dest(config.build_dir));
+});
+
+//----------------------------------------------
+//  Watch Tasks
+//----------------------------------------------
+
+//Watch our directories for changes, and file tasks when they do
+gulp.task('watch-build', function(){
+
+  // Watch for files in the scss directory and its sub directories
+  gulp.watch(config.project.css, ['build-css'])
+  
+  // Watch for project js files & subdirectories
+  gulp.watch(config.project.js, ['build-project-js'])
+
+    // Watch for project js files & subdirectories
+  gulp.watch(config.project.views, ['build-project-views'])
+
+});
+
+
+//----------------------------------------------
+//  User Tasks ( Things you might actually run )
+//----------------------------------------------
 
 //Run a server for previewing /build
 gulp.task('connect', function(){
@@ -85,33 +104,16 @@ gulp.task('connect', function(){
   });
 })
 
-
-// Watch our files for changes and fire tasks when they do
-gulp.task('watch-build', function(){
-  // Watch for files in the scss directory and its sub directories
-  gulp.watch(paths.projectCss, ['build-css'])
-  
-  // Watch for files in the
-  gulp.watch(paths.projectFiles, ['build-projectjs'])
-  
-  //create liveReload server
-  //livereload.listen();
-
-  //watch and reload /build on change
-  //gulp.watch(['build/**']).on('change', livereload.changed);
-
-});
-
-
 // Clean any built directories
 
 gulp.task('clean', ['clean-build']);
 
 // Build preview into the /build directory
 
-gulp.task('build', ['moveVendorJs', 'build-css', 'build-projectjs']);
+gulp.task('build', ['toJsVendor', 'toJsVendorBootstrap', 'toVendorFonts' , 'build-css', 'build-project-js', 'build-project-views']);
 
 // Watch the src files for changes and apply them immediately to the /build directory
 // also inform livereload of the change
 
 gulp.task('watch', ['build','watch-build','connect'])
+

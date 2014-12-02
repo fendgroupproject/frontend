@@ -1,0 +1,33 @@
+{
+  "build_dir": "build",
+  "project": {
+    "js_base": "src/js",
+    "js_target": "/js",
+    "js": [
+      "src/js/**/*"
+    ],
+    "css_target": "/css",
+    "css": [
+      "src/scss/main.scss"
+    ],
+    "views": [
+      "src/*.html"
+    ]
+  },
+  "vendor": {
+    "js_target": "/js/vendor/",
+    "js": [
+      "src/vendor/bower_modules//jquery/dist/jquery.js",
+      "src/vendor/bower_modules//knockoutjs/dist/knockout.js",
+      "src/vendor/bower_modules//requirejs/require.js"
+    ],
+    "bootstrap_js": [
+      "src/vendor/bower_modules/bootstrap-sass-official/assets/javascripts/bootstrap.js"
+    ],
+    "bootstrap_js_target" : "/js/vendor/bootstrap/",
+    "fonts_target": "/fonts/vendor/",
+    "fonts": [
+      "src/vendor/bower_modules/bootstrap-sass-official/assets/fonts/bootstrap/*.*"
+    ]
+  }
+}
