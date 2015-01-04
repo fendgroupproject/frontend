@@ -73,6 +73,15 @@ gulp.task('build-project-views', function(){
     .pipe(gulp.dest(config.build_dir));
 });
 
+// Build Test Files and Directories
+
+gulp.task('toJsTest', function(){
+  return gulp.src(config.test.js)
+    .pipe(newer(config.build_dir + config.test.js_target))
+    .pipe(gulp.dest(config.build_dir + config.test.js_target));
+});
+
+
 //----------------------------------------------
 //  Watch Tasks
 //----------------------------------------------
@@ -110,7 +119,7 @@ gulp.task('clean', ['clean-build']);
 
 // Build preview into the /build directory
 
-gulp.task('build', ['toJsVendor', 'toJsVendorBootstrap', 'toVendorFonts' , 'build-css', 'build-project-js', 'build-project-views']);
+gulp.task('build', ['toJsVendor', 'toJsVendorBootstrap', 'toVendorFonts' , 'build-css', 'build-project-js', 'build-project-views', 'toJsTest']);
 
 // Watch the src files for changes and apply them immediately to the /build directory
 // also inform livereload of the change

@@ -24,6 +24,13 @@
     "gulp-newer": "^0.4.0",
     "gulp-notify": "^2.0.1",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "^1.1.0"
+    "gulp-sass": "^1.1.0",
+    "karma-cli": "0.0.4",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.3.3",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "^0.2.2",
+    "phantomjs": "^1.9.13",
+    "requirejs": "^2.1.15"
   }
 }

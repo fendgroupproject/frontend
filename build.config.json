@@ -29,5 +29,11 @@
     "fonts": [
       "src/vendor/bower_modules/bootstrap-sass-official/assets/fonts/bootstrap/*.*"
     ]
+  },
+  "test": {
+    "js_target": "/",
+    "js": [
+      "src/**/test/*Spec.js"
+    ]
   }
 }
